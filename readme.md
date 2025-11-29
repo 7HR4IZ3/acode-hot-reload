@@ -1,4 +1,4 @@
-# acode-hot-reload
+# Acode Hot Reload
 
 A modern hot-reload development server for [Acode Editor](https://acode.foxdebug.com/), designed to streamline plugin development with instant updates, live reloading, and flexible configuration.
 
