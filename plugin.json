@@ -1,0 +1,22 @@
+{
+  "id": "acode.hot.reload",
+  "name": "Hot Reload",
+  "description": "Acode plugin for instant hot reload development. Automatically rebuilds and updates plugins in Acode Editor via WebSocket.",
+  "main": "dist/main.js",
+  "version": "1.0.2",
+  "readme": "readme.md",
+  "homepage": "https://github.com/7hr4iz3/acode-hot-reload",
+  "icon": "icon.png",
+  "files": [
+    "dist/main.js",
+    "icon.png",
+    "readme.md"
+  ],
+  "minVersionCode": 290,
+  "price": 0,
+  "author": {
+    "name": "Thraize",
+    "email": "iamthraize@gmail.com",
+    "github": "https://github.com/7hr4iz3"
+  }
+}

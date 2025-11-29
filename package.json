@@ -1,0 +1,51 @@
+{
+  "name": "acode-hot-reload",
+  "version": "1.0.2",
+  "description": "Hot-reload development server and plugin for Acode Editor. Instantly rebuild and push plugin updates with Bun, Ink, and WebSocket.",
+  "keywords": [
+    "acode",
+    "hot-reload",
+    "plugin",
+    "bun",
+    "ink",
+    "react",
+    "typescript",
+    "websocket",
+    "live-reload"
+  ],
+  "main": "dist/main.js",
+  "repository": "https://github.com/7hr4iz3/acode-hot-reload.git",
+  "author": "Thraize <iamthraize@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "acode-hot-reload": "./server/index.tsx"
+  },
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "commander": "^14.0.2",
+    "html-tag-js": "^1.1.22",
+    "ink": "6.5.1",
+    "ink-big-text": "^2.0.0",
+    "ink-gradient": "^3.0.0",
+    "ink-select-input": "^6.2.0",
+    "ink-spinner": "^5.0.0",
+    "ink-text-input": "^6.0.0",
+    "react": "18.2.0",
+    "react-devtools-core": "^7.0.1",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "bun build ./server/index.tsx",
+    "start": "bun --hot ./server/index.tsx"
+  },
+  "browserslist": [
+    "> 0.25%, not dead"
+  ],
+  "resolutions": {
+    "terser": ">=5.14.2 ",
+    "glob-parent": ">=5.1.2"
+  }
+}
