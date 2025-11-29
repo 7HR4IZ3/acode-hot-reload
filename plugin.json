@@ -5,7 +5,7 @@
   "main": "dist/main.js",
   "version": "1.0.2",
   "readme": "readme.md",
-  "homepage": "https://github.com/7hr4iz3/acode-hot-reload",
+  "homepage": "https://github.com/7HR4IZ3/acode-hot-reload",
   "icon": "icon.png",
   "files": [
     "dist/main.js",
@@ -17,6 +17,6 @@
   "author": {
     "name": "Thraize",
     "email": "iamthraize@gmail.com",
-    "github": "https://github.com/7hr4iz3"
+    "github": "https://github.com/7HR4IZ3"
   }
 }
