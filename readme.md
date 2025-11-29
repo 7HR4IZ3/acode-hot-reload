@@ -23,7 +23,17 @@ A modern hot-reload development server for [Acode Editor](https://acode.foxdebug
 - Node.js (optional, but Bun is preferred)
 - Acode Editor (for plugin testing)
 
-### Install Dependencies
+### Install Globally (Recommended)
+
+To install the server globally, allowing you to run it from any directory:
+
+```sh
+bun add -g acode-hot-reload
+```
+
+### Install Locally
+
+If you prefer to install it as a project dependency (e.g., for development of this plugin itself):
 
 ```sh
 bun install
@@ -35,8 +45,10 @@ bun install
 
 ### Start the Hot Reload Server
 
+After installation, you can run the server using the `acode-hot-reload` command:
+
 ```sh
-bun --hot ./server/index.tsx [plugin-directory] [options]
+acode-hot-reload [plugin-directory] [options]
 ```
 
 - If `[plugin-directory]` is omitted, the current directory is used.
@@ -44,7 +56,7 @@ bun --hot ./server/index.tsx [plugin-directory] [options]
 ### Example
 
 ```sh
-bun --hot ./server/index.tsx ./my-plugin --port 3000 --main-entry src/index.ts --extra-files assets/icon.png assets/config.json --debounce 500
+acode-hot-reload ./my-plugin --port 3000 --main-entry src/index.ts --extra-files assets/icon.png assets/config.json --debounce 500
 ```
 
 ---
