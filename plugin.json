@@ -3,7 +3,7 @@
   "name": "Hot Reload",
   "description": "Acode plugin for instant hot reload development. Automatically rebuilds and updates plugins in Acode Editor via WebSocket.",
   "main": "dist/main.js",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "readme": "readme.md",
   "homepage": "https://github.com/7HR4IZ3/acode-hot-reload",
   "icon": "icon.png",
