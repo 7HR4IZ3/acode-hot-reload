@@ -45,8 +45,8 @@ export async function buildPlugin(
             bundle: true,
             outfile: outFile,
             minify: true,
-            format: "iife",
-            loader: { ".css": "text" },
+            format: "esm",
+            loader: { ".css": "text", ".wasm": "binary" },
             conditions: ["style"],
             globalName: "plugin",
         });

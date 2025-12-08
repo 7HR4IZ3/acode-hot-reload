@@ -1,6 +1,6 @@
 {
   "name": "acode-hot-reload",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Hot-reload development server and plugin for Acode Editor. Instantly rebuild and push plugin updates with Bun, Ink, and WebSocket.",
   "keywords": [
     "acode",
@@ -26,6 +26,7 @@
   "dependencies": {
     "chokidar": "^5.0.0",
     "commander": "^14.0.2",
+    "esbuild": "^0.27.0",
     "html-tag-js": "^1.1.22",
     "ink": "6.5.1",
     "ink-big-text": "^2.0.0",

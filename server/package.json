@@ -1,8 +1,32 @@
 {
-  "name": "server",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
+  "name": "acode-hot-reload",
+  "version": "1.0.5",
+  "description": "Hot-reload development server and plugin for Acode Editor. Instantly rebuild and push plugin updates with Bun, Ink, and WebSocket.",
+  "keywords": [
+    "acode",
+    "hot-reload",
+    "plugin",
+    "bun",
+    "ink",
+    "react",
+    "typescript",
+    "websocket",
+    "live-reload"
+  ],
+  "main": "dist/index.js",
+  "repository": "https://github.com/7HR4IZ3/acode-hot-reload.git",
+  "author": "Thraize <iamthraize@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "acode-hot-reload": "dist/index.js"
+  },
+  "scripts": {
+    "build": "bun build --target node ./index.tsx --outfile dist/index.js",
+    "start": "bun --hot ./index.tsx"
+  },
   "devDependencies": {
     "@types/archiver": "^7.0.0",
     "@types/bun": "latest",

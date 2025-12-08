@@ -21,6 +21,8 @@ interface AppProps {
     builder: any;
     targetDir: string;
     config: HotReloadConfig;
+    ips: string[];
+    port: number;
 }
 
 const STATUS_ICONS = {
@@ -38,7 +40,7 @@ const LOG_ICONS = {
 
 const LOG_FILTERS = ["all", "info", "success", "warning", "error"];
 
-const App: React.FC<AppProps> = ({ watcher, socket, builder, targetDir, config }) => {
+const App: React.FC<AppProps> = ({ watcher, socket, builder, targetDir, config, ips, port }) => {
     const { exit } = useApp();
     const [clients, setClients] = useState(0);
     const [logs, setLogs] = useState<Log[]>([]);
@@ -251,6 +253,23 @@ const App: React.FC<AppProps> = ({ watcher, socket, builder, targetDir, config }
                 <Text>[5] Error</Text>
                 <Text>  </Text>
                 <Text color="magenta">Current: {logFilter.toUpperCase()}</Text>
+            </Box>
+
+            {/* Network Addresses Section */}
+            <Box flexDirection="column" marginBottom={1} borderStyle="single" borderColor="blue" padding={1}>
+                <Text underline color="blue">🌐 Network Addresses</Text>
+                {ips.length > 0 ? (
+                    ips.map((ip) => (
+                        <Box key={ip}>
+                            <Text color="cyan">• ws://{ip}:{port}</Text>
+                        </Box>
+                    ))
+                ) : (
+                    <Text color="gray">No network interfaces found</Text>
+                )}
+                <Box marginTop={1}>
+                    <Text dimColor>Use any of these addresses to connect from Acode</Text>
+                </Box>
             </Box>
 
             {/* Config Section with highlight animation */}

@@ -9,6 +9,7 @@ import { Watcher } from "./watcher";
 import { SocketServer } from "./socket";
 import * as builder from "./builder";
 import { existsSync, readFileSync } from "fs";
+import os from "os"; // Import os module to get network interfaces
 
 // Config interface
 interface HotReloadConfig {
@@ -63,7 +64,25 @@ const config: HotReloadConfig = {
 
 // Instantiate watcher and socket with config
 const watcher = new Watcher(targetDir, config.debounce);
-const socket = new SocketServer(Number(opts.port));
+const port = Number(opts.port); // Ensure port is a number
+const socket = new SocketServer(port);
+
+// Get active IPs
+const networkInterfaces = os.networkInterfaces();
+const activeIps: string[] = [];
+for (const devName in networkInterfaces) {
+    const iface = networkInterfaces[devName];
+    if (iface) {
+        for (let i = 0; i < iface.length; i++) {
+            const alias = iface[i];
+            if (alias && alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+                activeIps.push(alias.address);
+            }
+        }
+    }
+}
+// Always include localhost for completeness
+activeIps.push('127.0.0.1');
 
 // Render Ink UI
 render(
@@ -73,5 +92,7 @@ render(
         builder={builder}
         targetDir={targetDir}
         config={config}
+        ips={activeIps} // Pass active IPs
+        port={port}    // Pass the server port
     />
 );
